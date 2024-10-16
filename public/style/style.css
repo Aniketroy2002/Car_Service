@@ -1,0 +1,256 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.hero{
+    background-image: url("\\images\\image 1.png");
+    height: 100vh;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.container-fluid{
+    left: 0;
+    top:0;
+    position: fixed;
+    z-index:100;
+}
+#color_nav{
+    color: white;
+}
+.hero_text{
+    color: white;
+    display: flex;
+    align-items: center;
+    margin: 17rem 0 6rem 10rem;
+}
+.quality{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgba(0, 0, 0, 0.4);
+    margin-top: 8rem;
+}
+.quality1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.top_category{
+    text-align: center;
+    padding: 5rem;
+}
+.all_facility{
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    position: relative;
+}
+.facility{
+    margin-top: 4rem;
+}
+.facility img{
+    height: auto;
+    width: 80%;
+}
+.cir{
+    position: absolute;
+    right: 0;
+    top: 100%;
+}
+.cir1{
+    height: 2rem;
+    position: absolute;
+    left: 0;
+    top: 40%;
+}
+.why_us{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.left{
+    width: 50%;
+    padding: 9rem 0 9rem 9rem;
+}
+.left h2{
+    background-image: linear-gradient(to left,purple,purple,purple,purple,yellow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;  
+}
+.stf{
+    background-image: linear-gradient(to left,purple,yellow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;  
+}
+.right{
+    width: 50%;
+    padding-left: 7rem;
+}
+.right img{
+    height:20rem;
+    max-width: 80%;
+}
+.ques,.ans{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1rem;
+}
+.bar{
+    height: 5rem;
+    width: 80%;
+    background-color: #170925;
+    display: flex;
+    align-items:center;
+    justify-content:space-between;
+    border-radius: 10px;
+}
+.bar,.answer p{
+    padding-left: 2rem;
+}
+#plus{
+    padding-top: 1rem;
+}
+#plus:hover{
+    cursor: pointer;
+}
+.ans{
+    height: auto;
+}
+.answer{
+    width: 80%;
+    background-color: #180B26;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+}
+.neg{
+    height:4rem;
+    width: 4rem;
+    border-radius: 50%;
+    background-color:#2A1144;
+    margin-right: 1rem;
+}
+.neg i{
+    margin:1.5rem ;
+}
+.neg:hover{
+    cursor: pointer;
+}
+footer {
+    margin-top: 5rem;
+    background:linear-gradient(to right, #310D3A,#241332,#1B152B,#0D1922);
+  }
+footer h5 {
+    color: #ffffff;
+}
+footer p, footer ul, footer address {
+    font-size: 14px;
+}
+footer ul {
+    padding-left: 0;
+}
+footer ul li {
+    list-style-type: none;
+}
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+footer .me-2 {
+    margin-right: 10px;
+}
+iframe {
+    border-radius: 5px;
+}
+.testimonial-card {
+    background: linear-gradient(145deg, black,black);
+    max-width: 460px;
+    color: #fff;
+}
+#box{
+  border: 4px solid transparent;
+  background: linear-gradient(black,black) padding-box,
+      linear-gradient(45deg, #9b59b6,black, white) border-box;
+  margin: 1rem;
+  border-radius: 20px;
+}
+.card h6 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.card p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.bi-star-fill {
+  font-size: 16px;
+}
+
+.text-warning {
+  margin-top: 5px;
+}
+
+.testimonial-card .text-light {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+  
+.marquee-container {
+    height: 5rem;
+    overflow: hidden;
+    line-height: 30px;
+  
+    .marquee {
+      top: 0;
+      left: 100%;
+      width: 100%;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      animation: marquee 30s linear infinite;
+    }
+  
+    .marquee2 {
+      animation-delay: 15s;
+    }
+    .comp{
+        padding-left: 15px;
+    }
+}
+  
+  @keyframes marquee {
+    0% {
+      left: 100%;
+    }
+    100% {
+      left: -100%
+    }
+  }
+@media screen and (max-width:600px) {
+    .hero_text{
+        margin: 0;
+    }
+    .all_facility{
+        display: block;
+    }
+    .why_us{
+        display: block;
+    }
+    .left,.right{
+        width: 100%;
+        padding: 3rem;
+    }
+    .satisfaction{
+        margin-left: 1rem;
+    }
+    #marq{
+        margin-bottom: 3rem;
+    }
+}

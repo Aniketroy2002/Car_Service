@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="/style/contact.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+</head>
+<body style="background-color: black;">
+    <div class="contact"></div>
+        <nav><%- include("header.ejs") %></nav>
+    </div>
+
+    <div class="get-in-touch">
+        <h2 id="color_nav">Get in <span class="gradient-text">Touch</span></h2>
+        <p id="color_nav">Enim tempor eget pharetra facilisis sed maecenas adipiscing. Eu leo molestie vel, ornare non id blandit netus</p>
+        <div class="phone">
+            <div class="icon">
+                <img src="\images\Frame 831.png" alt="">
+                <h4 id="color_nav">Phone</h4>
+            </div>
+            <p>+91-8976543212</p>
+
+            <div class="icon">
+                <img src="\images\Frame 835.png" alt="">
+                <h4 id="color_nav">FAX</h4>
+            </div>
+            <p>03 5432 1234</p>
+            <div class="icon">
+                <img src="\images\.png" alt="">
+                <h4 id="color_nav">Email</h4>
+            </div>
+            <p>carservicing@gmail.com</p>
+        </div>
+
+        <div class="form-section">
+            <form id="border">
+                <div class="form-row">
+                    <div class="col-md">
+                        <div class="form-group">
+                            <div class="name">
+                                <label for="name"><span class="text-danger"></span></label>
+                                <input type="text" class="form-control" id="name" placeholder="Name">
+                            </div>
+                            <div class="mail">
+                                <label for="email"><span class="text-danger"></span></label>
+                                <input type="email" class="form-control" id="email" placeholder="Email">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="form-row">
+                    <div class="col-md">
+                        <div class="form-group">
+                            <div class="phone">
+                                <label for="phone"><span class="text-danger"></span></label>
+                                <input type="text" class="form-control" id="phone" placeholder="Phone number">
+                            </div>
+                            <div class="choose">
+                                <label for="how-did-you-find"></label>
+                                <select class="form-control" id="how-did-you-find">
+                                    <option selected>How did you find us</option>
+                                    <option>Google</option>
+                                    <option>Facebook</option>
+                                    <option>Referral</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="form-group">
+                    <label for="message"></label>
+                    <textarea class="form-control" id="message" rows="5" placeholder="Write a message..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-send float-right" id="submit-btn">SEND</button>
+            </form>
+        </div>
+    </div>
+
+    <footer><%- include("footer.ejs") %></footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

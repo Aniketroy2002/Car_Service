@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Listing Page</title>
+    <link rel="stylesheet" href="/style/product.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body style="background-color: black;">
+    <section class="pg">
+        <nav><%- include("header.ejs") %></nav>
+        <h1 id="color_nav">Product</h1>
+    </section>
+
+            <div class="container-pro">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-lg-3 col-md-4 col-sm-12 bg-black p-3">
+                <select class="form-select mb-4">
+                    <option selected>Type</option>
+                    <option>Michelin</option>
+                    <option>Other</option>
+                </select>
+
+                <select class="form-select mb-4">
+                    <option selected>Range</option>
+                    <option>Under 500</option>
+                    <option>500 - 1000</option>
+                </select>
+
+                <select class="form-select mb-4">
+                    <option selected>Category</option>
+                    <option>abcd</option>
+                    <option>efgh</option>
+                </select>
+
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-lg-9 col-md-8 col-sm-12">
+                <!-- Search and Tabs -->
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mt-3 mb-4">
+                    <input type="text" class="form-control mb-2 mb-md-0 w-100 w-md-50" placeholder="Search Products" id="search-input">
+                    <button class="btn btn-primary ms-md-2 w-90 w-md-auto" id="sbtn">Search</button>
+                </div>
+
+                <div class="btn-group mb-3" role="group">
+                    <button type="button" class="btn btn-outline-light">Maintenance</button>
+                    <button type="button" class="btn btn-outline-light">Cleaning Essentials</button>
+                    <button type="button" class="btn btn-outline-light">Interior</button>
+                    <button type="button" class="btn btn-outline-light">Exterior</button>
+                </div>
+
+                <!-- Product Grid -->
+                <div class="container mt-5">
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4" id="product-grid">
+                      <!-- Product Cards will be dynamically injected here -->
+                    </div>
+
+                    <div id="error-message" class="text-center text-danger mt-4">
+                        <h4 id="color_nav">No products found!</h4>
+                      </div>
+                  
+                    <!-- Pagination -->
+                    <nav aria-label="Page navigation example" class="mt-4">
+                      <ul class="pagination justify-content-center" id="pagination">
+                        <!-- Pagination buttons will be dynamically injected here -->
+                      </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer><%- include("footer.ejs") %></footer>
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/script/product.js"></script>
+</body>
+</html>

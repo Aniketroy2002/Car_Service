@@ -1,0 +1,63 @@
+body {
+    background-color: #333;
+    color: #fff;
+}
+.pg{
+    background-image: url("\\images\\Rectangle 3463471.png");
+    height: 50vh;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container-pro{
+    overflow-x: hidden;
+}
+.card {
+    border-radius: 8px;
+    position: relative;
+}
+.card-body .badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.pagination .page-item .page-link {
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #fff;
+}
+.btn-group .btn {
+    border-color:gold;
+    color: gold;
+}
+input[type="text"] {
+    background-color: #222;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+ul {
+    padding: 0;
+}
+
+ul li {
+    margin: 5px 0;
+}
+
+@media (max-width: 576px) {
+    .btn-group {
+        flex-direction: column;
+    }
+
+    .btn-group .btn {
+        margin-bottom: 5px;
+    }
+
+    .pagination {
+        flex-wrap: wrap;
+    }
+}

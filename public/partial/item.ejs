@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>items</title>
+</head>
+<body>
+    <div id="image-container">
+        <!-- Images will be loaded here dynamically -->
+      </div>
+      <script>
+        // Fetch images from the server and display them
+        async function fetchImages() {
+          try {
+            const response = await fetch('/api/images');
+            const images = await response.json();
+    
+            const imageContainer = document.getElementById('image-container');
+            imageContainer.innerHTML = ''; // Clear the container
+    
+            images.forEach(image => {
+                console.log(image.path)
+              const img = document.createElement('img');
+            //   img.src = `/${image.path}`;
+            //   img.src = '\\uploads\\1727583468924-img5.jpg';
+                  img.src='\\uploads\\1727587124670-img6.jpg';
+              // img.src = `//uploads//${image.path}`;
+              img.alt = image.filename;
+              img.style.width = '200px'; // Adjust size as needed
+              img.style.margin = '10px'; // Adjust spacing as needed
+              imageContainer.appendChild(img);
+            });
+          } catch (error) {
+            console.error('Error fetching images:', error);
+          }
+        }
+    
+        // Call the function to load images when the page loads
+        window.onload = fetchImages;
+      </script>
+</body>
+</html>

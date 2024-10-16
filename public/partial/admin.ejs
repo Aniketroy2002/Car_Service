@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - Upload Image</title>
+</head>
+<body>
+  <h1>Upload an Image</h1>
+  <form action="/admin/upload" method="POST" enctype="multipart/form-data">
+    <input type="file" name="image" required />
+    <button type="submit">Upload</button>
+  </form>
+
+
+
+  <!-- product -->
+  <div class="container">
+    <h2>Admin Product Upload</h2>
+
+    <!-- Product Upload Form -->
+    <form id="upload-form" class="mb-4">
+      <div class="mb-3">
+        <label for="product-name" class="form-label">Product Name</label>
+        <input type="text" id="product-name" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label for="product-desc" class="form-label">Product Description</label>
+        <input type="text" id="product-desc" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label for="product-price" class="form-label">Product Price</label>
+        <input type="number" id="product-price" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label for="product-img" class="form-label">Product Image URL</label>
+        <input type="url" id="product-img" class="form-control" required />
+      </div>
+      <button type="submit" class="btn btn-primary">Upload Product</button>
+    </form>
+
+    <h2>Product List</h2>
+
+    <!-- Product Grid -->
+    <div id="product-grid" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4"></div>
+  </div>
+  <script>
+    let products = [
+      { name: "Michelin", desc: "Rear-view Mirror", price: "Rs 499", img: "https://www.duaria.com/wp-content/uploads/2018/06/Wing_mirror.jpg" },
+      { name: "Michelin", desc: "Ultra-Comfort Memory Foam Seat Cover", price: "Rs 999", img: "https://i5.walmartimages.com/asr/f6cca9a8-ff94-49dd-9a84-d5b6b8e4a4c4_1.7b7a5d4a806bda8e475c20404811e6fe.jpeg" }
+    ];
+
+    // Function to Render Products on the Grid
+    function renderProducts() {
+      const productGrid = document.getElementById('product-grid');
+      productGrid.innerHTML = ''; // Clear previous products
+
+      products.forEach((product) => {
+        const productCard = `
+          <div class="col">
+            <div class="card text-white bg-secondary">
+              <img src="${product.img}" class="card-img-top" alt="${product.name}" height="250">
+              <div class="card-body">
+                <h5 class="card-title">${product.name}</h5>
+                <p class="card-text">${product.desc}</p>
+                <p class="price">${product.price}</p>
+              </div>
+            </div>
+          </div>`;
+        productGrid.innerHTML += productCard;
+      });
+    }
+
+    // Render initial products
+    renderProducts();
+
+    // Product Upload Form Submission Handler
+    document.getElementById('upload-form').addEventListener('submit', (event) => {
+      event.preventDefault(); // Prevent form from refreshing the page
+
+      // Collect product data from the form
+      const newProduct = {
+        name: document.getElementById('product-name').value,
+        desc: document.getElementById('product-desc').value,
+        price: `Rs ${document.getElementById('product-price').value}`,
+        img: document.getElementById('product-img').value
+      };
+
+      // Add the new product to the products array
+      products.push(newProduct);
+
+      // Re-render the product grid with the new product
+      renderProducts();
+
+      // Reset the form
+      event.target.reset();
+    });
+  </script>
+</body>
+</html>
